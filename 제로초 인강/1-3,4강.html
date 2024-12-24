@@ -58,6 +58,12 @@
             --color_enter: #e538e2;
             --color_enter_rgb: 229, 56, 226;
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
         #html, body {
             margin: 0;
             padding: 0;
@@ -74,10 +80,10 @@
             text-align: left;
             position: relative;
         }
-        #header-hamburger {
+
+        #header-hamburger,#header-navertalk,#header-notice, #header-cart {
             position: absolute;
             top: 18px;
-            left: -10px;
             padding: 10px;
             display: inline-block;
             background: none;
@@ -85,8 +91,7 @@
             cursor: pointer;
         }
 
-
-        #header-hamburger:hover::before {
+        #header-hamburger:hover::before, #header-navertalk:hover::before, #header-notice:hover::before, #header-cart:hover::before {
             position: absolute;
             content: '';
             z-index: 0;
@@ -94,26 +99,64 @@
             top: 1px;
             width: 44px;
             height: 44px;
-
             background-color: var(--color_option_bg);
-            border-radius: 50%;            
+            border-radius: 50%;       
         }
 
-        #header-hamburger > div {
+        #header-hamburger > div, #header-navertalk > div, #header-notice > div, #header-cart > div {
             background-image: url(./sp_main.png);
             z-index: 1;
             position: relative;
-            left: -2;
-            top: -2;
-            width: 26px;
-            height: 26px;
+            left: -3px;
+            top: -3px;
+            width: 30;
+            height: 30;
             background-repeat: no-repeat;
             background-size: 452px 436px;
-            background-position: -311px -166px;
-
         }
+
+
+
+        #header-hamburger {
+            left: -10px;
+        }
+        #header-hamburger > div {
+            background-position: -311px -166px;
+        }
+
+        #header-navertalk {
+            right: 94px;
+        }
+        #header-navertalk > div {
+            background-position: -99px -316px;
+        }
+
+        #header-notice {
+            right: 42px;
+        }
+        #header-notice > div {
+            background-position: -311px -232px;
+        }
+
+        #header-cart {
+            right: -10px;
+        }
+        #header-cart > div {
+            background-position: -33px -316px;
+        }
+
+
+
         #main {
             height: 2000px;
+        }
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;            
         }
     </style>
 </head>
@@ -124,6 +167,25 @@
                 <button id="header-hamburger">
                     <!--::before-->
                     <div></div>
+                    <span class="blind">확장 영역</span>
+                    <!--::after-->
+                </button>
+                <button id="header-navertalk">
+                    <!--::before-->
+                    <div></div>
+                    <span class="blind">네이버톡</span>
+                    <!--::after-->
+                </button>
+                <button id="header-notice">
+                    <!--::before-->
+                    <div></div>
+                    <span class="blind">알림</span>
+                    <!--::after-->
+                </button>
+                <button id="header-cart">
+                    <!--::before-->
+                    <div></div>
+                    <span class="blind">장바구니</span>
                     <!--::after-->
                 </button>
             </div>

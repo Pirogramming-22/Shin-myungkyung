@@ -62,8 +62,6 @@
         * {
             box-sizing: border-box;
         }
-
-
         #html, body, form {
             font-size: 10.5px;
             line-height: 10.5px;
@@ -71,7 +69,10 @@
             margin: 0;
             padding: 0;
         }
-
+        form, ul {
+            margin: 0;
+            padding: 0;
+        }
         #wrap {
             text-align: center;
         }
@@ -85,7 +86,6 @@
             position: relative;
             height: 64px;
         }
-
         #header-hamburger,#header-navertalk,#header-notice, #header-cart {
             position: absolute;
             top: 18px;
@@ -120,8 +120,6 @@
             background-size: 452px 436px;
         }
 
-
-
         #header-hamburger {
             left: -10px;
         }
@@ -149,8 +147,6 @@
         #header-cart > div {
             background-position: -33px -316px;
         }
-
-
 
         #main {
             height: 2000px;
@@ -210,8 +206,6 @@
                 #search > form:hover {
                     box-shadow: 0 2px 4px 0 rgba(0,0,0, .12);
                 }
-
-
                 #search-svg {
                     display: inline-flex;
                     justify-content: ceter;
@@ -269,7 +263,6 @@
                     border: none;
                     cursor: pointer;
                 }
-
 
                 #search-keyboard::before {
                     content: "";
@@ -502,14 +495,12 @@
                         </a>
                     </li>
                 </ul>
-
-
             </nav>
 
             <style>
                 #main {
                     display: flex;
-                    margin-top: 51px;
+                    margin-top: 23px;
                 }
                 #main-left {
                     width: 830px;
@@ -519,26 +510,11 @@
                     width: 420px;
                 }
                 #main-left-ad, #main-right-ad {
-                    background-color: gray;
+                    background-color: grey;
                 }
                 aside[id$=ad] {
                     border-radius: 8px;
                     margin-bottom: 16px;
-
-                }
-                #main-left-ad {
-                    height: 130px;
-                }
-
-                section[id^=main] {
-                    box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0,0,0,.04);
-                    border-radius: 8px;
-                    margin-bottom: 16px;
-
-                }
-                #main-shopping {
-                    height: 560px;
-
                 }
 
                 #main-login {
@@ -559,6 +535,11 @@
                     height: 22px;
                     border-radius: 4px;
                     color: white;
+                    display: flex;
+                    align-items: center; /* 수직 가운데 정렬 */
+                    justify-content: center; /* 수평 가운데 정렬 */
+                    gap: 8px; /* 아이콘과 텍스트 간격 */
+
                     text-decoration: none;
                     margin-bottom: 16px;
                 }
@@ -570,7 +551,7 @@
                     background-position: 1px -298px;
                     background-repeat: no-repeat;
                     width: 72px;
-                    height: 14px;
+                    height: 21px;
                     display: inline-block;
                     margin: 3px 8px 0px 2px;
                 }
@@ -603,6 +584,20 @@
                     height: 240px;
                 }
 
+                #main-left-ad {
+                    height: 130px;
+                }
+
+                section[id^=main] {
+                    box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0,0,0, .04);
+                    border-radius: 8px;
+                    margin-bottom: 16px;
+                }
+
+                #main-shopping {
+                    height: 560px;
+                }
+
                 .main-weather-and-stock {
                     padding: 18px 0;
                 }
@@ -612,7 +607,7 @@
                 }
 
                 .main-weather-and-stock > div {
-                    border-top: 1px solid var(--color_border_in);
+                    border-top: 1px solid gray(--color_border_in);
                 }
                 #main-weather {
                     height: 236px;
@@ -628,7 +623,7 @@
                     padding: 12px 20px;
                     background-color: var(--color_option_bg);
                     border-radius: 4px;
-                    font-size: 1.1rem;
+                    font-size: 0.7rem;
                     line-height: 26px;
                 }
                 
@@ -642,14 +637,14 @@
                 #main-newstand-gray .left > a:first-of-type::after {
                     content: '';
                     background-image: url('./sp_main.png');
-                    background-size: 463px 440px;
-                    background-position: -242px -184px;
+                    background-size: 452px 436px;
+                    background-position: -236px -183px;
                     background-repeat: no-repeat;
                     width: 9px;
                     height: 6px;
                     display: inline-block;
                     margin: 10px 0 0 5px;
-                    vertical-align: 3px;
+                    vertical-align: top;
                 }
                 #main-newstand-animation {
                     padding-left: 25px;
@@ -710,10 +705,6 @@
                     background-color: var(--color_dot_divider);
                 }
 
-
-
-
-
                 #main-newstand {
                     height: 426px;
                 }
@@ -724,7 +715,7 @@
                     color: inherit;
                 }
 
-                #main-newstand a  :hover{
+                .left-section a:hover {
                     text-decoration: underline;
                 }
                 #main-newstand-grid {
@@ -740,6 +731,8 @@
                     border: 1px solid var(--color_border_in);
                     border-radius: 4px;
                     margin-top: 18px;
+                    margin-left: 0;
+                    margin-bottom: 18px;
                 }
                 #main-newstand-grid div {
                     height: 100%;
@@ -752,7 +745,7 @@
                 .left-section footer {
                     border-top: 1px solid var(--color_border_in);
                     padding: 10px 0 11px;
-                    font-size: 1.3rem;
+                    font-size: 1rem;
                     line-height: 35px;
                     font-weight: 600;
                     color: #606060;
@@ -859,7 +852,8 @@
                     flex-flow: column;
                 }
                 #main-shopping-top {
-                    padding-top: 19px;
+                    flex: 1;
+                    padding: 18px 20px;
                 }
 
                 #main-shopping footer .text {
@@ -875,14 +869,21 @@
                     display: flex;
                     background-color: var(--color_option_bg);
                 }
-
+                #main-newstand-top {
+                    flex: 1;
+                    padding: 18px 20px;
+                }
                 #main-newstand footer {
                     padding: 10px 1 11px;
                 }
                 #main-newstand header {
-                    font-size: 1.2rem;
-                    color: rgba(8,8,8, .5)
-
+                    font-size: 1rem;
+                    color: rgba(8,8,8, .5);
+                    display: flex;
+                    justify-content: flex-start;
+                    line-height: 23px;
+                    margin-bottom: 16px;
+                    gap: 10px; 
                 }
                 #main-newstand header.bold {
                     font-weight: bold;
@@ -895,20 +896,47 @@
                 }
                 #main-shopping-grid {
                     margin-top: 18px;
+                    margin-bottom: 18px;
                     display: grid;
                     grid-template-rows: 90px 95px 170px;
                     grid-template-columns: 1fr 1fr 1fr 1fr 250px;
                     column-gap: 20px;
                 }
-
+                #main-shopping-grid .item{
+                    line-height: 20px;
+                    letter-spacing: -.8px;
+                    font-size: 0.7rem;
+                }
+                #main-shopping-grid .item > .image {
+                    width: 115px;
+                    height: 115px;
+                    border-radius: 4px;
+                    background-color: gray;
+                    margin-bottom: 10px;
+                }
+                #main-shopping-grid .item > .text {
+                    text-align: left;
+                }
                 .item:nth-child(1), .item:nth-child(2), .item:nth-child(3), .item:nth-child(4) {
                     grid-row: 1 / span 2;
+                }
+                .item:nth-child(5), .item:nth-child(6), .item:nth-child(11) > div:first-child{
+                    padding: 10px 12px 5px;
+                    border-radius: 4px;
+                    border: 1px solid rgba(0,0,0,.05);
+                    background: rgba(245,248,251,.6);
+                }
+                .item:nth-child(6){
+                    margin: 11px 0;
+                }
+                .item:nth-child(11) > div:first-child{
+                    height: 115px;
+                    margin-bottom: 10px;
                 }
 
             </style>
             <main id="main">
                 <div id="main-left">
-
                     <aside id="main-left-ad"></aside>
                     <section id="main-newstand" class="left-section">
                         <div>
@@ -919,13 +947,15 @@
                                 <a href="#">스포츠</a>
                                 <a href="#">경제</a>
                             </header>
-                            <div>
-                                <div id="main-newstand-gray">
+                            <div id="main-newstand-gray">
+                                <div class="left">
                                     <a href="#" class="bold">전체언론사</a>
+                                    <div id="main-newstand-animation">
                                     <a href="#">연합뉴스</a>
                                     <a href="#">제로초 지금 배고파제로초 지금 배고파제로초 지금 배고파</a>    
+                                    </div>
                                 </div>
-                                <div>
+                                <div class="right">                        
                                     <a href="#">뉴스스탠드</a>
                                     <a href="#">뉴스홈</a>
                                 </div>
@@ -982,14 +1012,57 @@
                                     <button class="next"><span class="blind">다음페이지</span></button>
                                 </div>
                             </div>
-                            <div id="main-shopping-grid">
+                            <div class="right">
+                                <span>1</span>
+                                <span>/18</span>
+                                <button class="prev"><span class="blind">이전페이지</span></button>
+                                <button class="next"><span class="blind">다음페이지</span></button>
                             </div>
-                            <footer>
-                                <button class="prev"><span class="blind">이전 페이지</span></button>
-                                <div class="text"><span class="hot">쇼핑핫아이템</span>&nbsp;더보기&nbsp;1<span class="total">/18</span></div>
-                                <button class="next"><span class="blind">다음 페이지</span></button>
-                            </footer>
-    
+                            <div id="main-shopping-grid">
+                                <div class="item">
+                                    <div class="image"></div>
+                                    <div class="text">독보적인 퀄리티 우린품격을입어요</div>
+                                </div>
+                                <div class="item">
+                                    <div class="image"></div>
+                                    <div class="text">독보적인 퀄리티 우린품격을입어요</div>
+                                </div>
+                                <div class="item">
+                                    <div class="image"></div>
+                                    <div class="text">독보적인 퀄리티 우린품격을입어요</div>
+                                </div>
+                                <div class="item">
+                                    <div class="image"></div>
+                                    <div class="text">독보적인 퀄리티 우린품격을입어요</div>
+                                </div>
+                                <div class="item"></div>
+                                <div class="item"></div>
+                                <div class="item">
+                                    <div class="image"></div>
+                                    <div class="text">독보적인 퀄리티 우린품격을입어요</div>
+                                </div>
+                                <div class="item">
+                                    <div class="image"></div>
+                                    <div class="text">독보적인 퀄리티 우린품격을입어요</div>
+                                </div>
+                                <div class="item">
+                                    <div class="image"></div>
+                                    <div class="text">독보적인 퀄리티 우린품격을입어요</div>
+                                </div>
+                                <div class="item">
+                                    <div class="image"></div>
+                                    <div class="text">독보적인 퀄리티 우린품격을입어요</div>
+                                </div>
+                                <div class="item">
+                                    <div></div>
+                                    <div>아웃렛 쇼핑 득템찬스! 시즌오프SALE</div>
+                                </div>
+                            </div>
+                        <footer>
+                            <button class="prev"><span class="blind">이전 페이지</span></button>
+                            <div class="text"><span class="hot">쇼핑핫아이템</span>&nbsp;더보기&nbsp;1<span class="total">/18</span></div>
+                            <button class="next"><span class="blind">다음 페이지</span></button>
+                        </footer>
                     </section>
                 </div>
                 <div id="main-right">
@@ -1012,9 +1085,7 @@
                         <header>증시</header>
                         <div></div>
                     </section>
-
                 </div>
-
             </main>
         </div>
     </div>

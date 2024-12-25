@@ -750,6 +750,98 @@
                     align-items: center;
                 }
 
+                #left-section footer {
+                    font-size: 1.3rem;
+                    line-height: 35px;
+                    font-weight: 600;
+                    color: #606060;
+                    color: var(--color_caption2);
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
+                }
+
+                #main-newstand footer .list, #main-newstand footer .grid {
+                    position: absolute;
+                    border: none;
+                    cursor: pointer;
+                    top: 0;
+                    background-color: transparent;
+                }
+                #main-newstand footer .list {
+                    right: 49px;
+                    padding: 18px 9px 18px 20px;
+                }
+                #main-newstand footer .list::before {
+                    content: '';
+                    display: inline-block;
+                    background-image: url(./sp_main.png);
+                    background-size: 452px 436px;
+                    background-position: -214px -374px;
+                    background-repeat: no-repeat;
+                    width: 20px;
+                    height: 20px;
+                }
+                #main-newstand footer .list:hover::before {
+                    background-position: -193px -374px;
+                }
+
+                #main-newstand footer .grid {
+                    right: 0;
+                    padding: 18px 20px 18px 9px;
+                }
+                #main-newstand footer .grid::before {
+                    content: '';
+                    display: inline-block;
+                    background-image: url(./sp_main.png);
+                    background-size: 452px 436px;
+                    background-position: -391px -401px;
+                    background-repeat: no-repeat;
+                    width: 20px;
+                    height: 20px;
+                }
+
+                #left-section footer .prev, .left-section footer .next {
+                    background: none;
+                    border: none;
+                    content: '';
+                    width: 36px;
+                    height: 36px;
+                    border: 1px solid #dadcdf;
+                    border: 1px solid var(--color_button_border);
+                    background-color: #fff;
+                    background-color: var(--color_button1_bg);
+                    display: inline-block;
+                    box-shadow: 0 1px 2px 0 rgba(0,0,0,.06);
+                    border-radius: 50%;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #left-section footer .prev::before {
+                    transform: rotate(180deg);
+                }
+
+                #left-section footer .prev::before, .left-section footer .next::before {
+                content: "";
+                    display: block;
+                    background-image: url(https://pm.pstatic.net/resources/asset/sp_main.30918f90.png);
+                    background-size: 422px 405px;
+                    background-position: -412px 0px;
+                    background-repeat: no-repeat;
+                    width: 10px;
+                    height: 12px;
+                }
+
+                .left-section footer .text {
+                    padding: 0 16px;
+                }
+
+
+
+
                 #main-newstand footer {
                     padding: 10px 1 11px;
                 }
@@ -808,7 +900,6 @@
                                 <div>언론사</div>
                                 <div></div>
                             </div>
-
                         </div>
                         <footer>
                             <button class="prev"><span class="blind">이전 페이지</span></button>

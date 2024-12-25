@@ -628,9 +628,8 @@
                     padding: 12px 20px;
                     background-color: var(--color_option_bg);
                     border-radius: 4px;
-                    font-size: 1.4rem;
+                    font-size: 1.1rem;
                     line-height: 26px;
-
                 }
                 
                 #main-newstand-gray .left {
@@ -871,16 +870,17 @@
                 }
                 #main-shopping-gray .left{
                     width: 668px;
+                    height: 20px;
                     padding: 15px 20px 14px;
                     display: flex;
+                    background-color: var(--color_option_bg);
                 }
-
 
                 #main-newstand footer {
                     padding: 10px 1 11px;
                 }
                 #main-newstand header {
-                    font-size: 1.6rem;
+                    font-size: 1.2rem;
                     color: rgba(8,8,8, .5)
 
                 }
@@ -892,6 +892,17 @@
                 #main-shopping-gray .right{
                     margin-left: auto;
                     padding: 10px 0;
+                }
+                #main-shopping-grid {
+                    margin-top: 18px;
+                    display: grid;
+                    grid-template-rows: 90px 95px 170px;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 250px;
+                    column-gap: 20px;
+                }
+
+                .item:nth-child(1), .item:nth-child(2), .item:nth-child(3), .item:nth-child(4) {
+                    grid-row: 1 / span 2;
                 }
 
             </style>

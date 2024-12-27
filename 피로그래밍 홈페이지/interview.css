@@ -1,0 +1,216 @@
+/* 기본 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* 기본 변수 정의 */
+  :root {
+    --black: #000;
+    --bg-dark: #333333;
+    --text-light: #ffffff;
+    --text-dark: #000000;
+    --highlight: #0bec12;
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --subtext-gray: #c6c6c6;
+    --transition: 0.3s;
+    --border-radius: 8px;
+    --gutter: 16px;
+    --font-large: 1.8rem;
+    --font-small: 1.4rem;
+    --header1: 3.8rem;
+    --header2: 2.8rem;
+    --header3: 2.2rem;
+    --body1: 1.6rem;
+    --body2: 1.4rem;
+  }
+  
+  /* 기본 스타일 */
+  body {
+    background-color: var(--black);
+    color: var(--text-light);
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    max-width: 1400px;
+    min-width: 350px;
+    margin: 0 auto;
+    
+  }
+  
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+  
+  ul {
+    display: block;
+    list-style: none;
+    margin: 1em 0;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+  }
+  
+  /* 헤더 스타일 */
+  #main-header {
+    height: 9rem;
+    width: 100%;
+    padding: 0 40px;
+    top: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1000;
+  }
+  
+  #main-header img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .header--container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #main-header ul {
+    display: flex;
+    gap: var(--gutter);
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  
+  #main-header ul li {
+    cursor: pointer;
+    transition: color var(--transition) ease;
+  }
+  
+  #main-header ul li:hover {
+    color: var(--highlight);
+  }
+  
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: var(--gutter);
+    margin-bottom: var(--offset);
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0;
+  
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  @media (max-width: 1400px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  @media (max-width: 350px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+  }
+  
+  .card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 16px;
+    cursor: pointer;
+    position: relative;
+  
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.6);
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover img {
+    transform: scale(1.1);
+  }
+  
+  .card-content {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .name {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .role {
+    color: #0f0;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  .quote {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-top: 5px;
+  }
+  
+  .hamburger {
+    position: absolute; /* 부모 기준으로 위치 설정 */
+    top: 10px; /* 위에서 10px 떨어짐 */
+    right: 10px; /* 오른쪽에서 10px 떨어짐 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  .card:hover .hamburger {
+    transform: scaleX(0.8);
+  }
+  
+  .hamburger span {
+    width: 15px;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+  }
+  
+  .hamburger span + span {
+    margin-top: 4px;
+  }
+  
+  
+  .card {
+    position: relative; /* 부모 컨테이너 기준으로 자식 배치 */
+  }
+  

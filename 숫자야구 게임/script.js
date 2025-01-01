@@ -125,7 +125,6 @@ const game = {
 
 document.addEventListener("DOMContentLoaded", () => {
     game.initialize();
-
     document.querySelector(".submit-button").addEventListener("click", () => {
         game.validateAndProcessInput();
     });

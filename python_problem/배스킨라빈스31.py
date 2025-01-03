@@ -16,3 +16,6 @@ while True:
     else:
         break  
 
+for i in range(a):
+    num+=1
+    print(f"playerA : {num}")

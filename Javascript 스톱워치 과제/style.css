@@ -11,6 +11,8 @@ body {
     background-color: gray;
     width: 300px;
     text-align: center;
+    border-radius: 16px;
+    padding: 20px;
 }
 
 h1 {
@@ -30,12 +32,40 @@ h1 {
     margin-bottom: 20px;
 }
 
+.buttons button {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2d3436;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.delete-button {
+    margin-left: 10px;
+}
+
 .buttons .button-start,
 .buttons .button-stop,
 .buttons .button-reset {
     padding: 10px 20px;
     font-size: 14px;
     cursor: pointer;
+    width: 10px;
+    margin: 5px;
+}
+
+.record-header {
+    display: flex; 
+    align-items: center; 
+    position: relative; 
+    justify-content: space-between;
+    margin: 10px;
 }
 
 .record-container {
@@ -48,6 +78,10 @@ h1 {
     margin-top: 10px;
     font-size: 20px;
     color: black;
+    margin: 0; /* 기본 여백 제거 */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* 텍스트를 중앙으로 이동 */
 }
 
 .record-container .record-list {
@@ -71,8 +105,10 @@ h1 {
 }
 
 .clear-all-button {
+    font-weight: bold;
     cursor: pointer;
-    top:10px;
-    left: 10px;
-    margin-bottom: 10px;
+    border: none;
+    background-color: #ddd;
+    transition: background-color 0.3s ease;
+
 }

@@ -1,0 +1,78 @@
+body {
+    font-family: 'Arial';
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+}
+
+.stopwatch-container {
+    background-color: gray;
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 10px;
+    font-size: 24px;
+    color: black;
+}
+
+.stopwatch .time {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.buttons .button-start,
+.buttons .button-stop,
+.buttons .button-reset {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.record-container {
+    margin-top: 20px;
+    overflow-y: auto;
+    background-color: #ddd;
+}
+
+.record-container h2 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: black;
+}
+
+.record-container .record-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.record-container .record-list li {
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.record-container .record-list li:last-child {
+    border-bottom: none;
+
+}
+
+.clear-all-button {
+    cursor: pointer;
+    top:10px;
+    left: 10px;
+    margin-bottom: 10px;
+}

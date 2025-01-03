@@ -20,7 +20,8 @@ while True:
     for i in range(a):
         num+=1
         print(f"playerA : {num}")
-        if num == 313:
+        if num == 31:
+            print("playerB win!")
             break
 
     if num == 31:
@@ -45,6 +46,7 @@ while True:
         num+=1
         print(f"playerB : {num}")
         if num == 31:
+            (print("playerA win!"))
             break
 
     if num == 31:

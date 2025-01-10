@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detail</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        h1 {
+            color: black;
+        }
+        a {
+            text-decoration: none; /* 모든 링크의 밑줄 제거 */
+        }
+
+        .btn-container .btn {
+        text-decoration: none;
+        background-color: #e50914;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        }
+        .btn-container .btn2 {
+            color: black;
+            display: block;
+            font-family: Arial, sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            height: 80px;
+            margin-block-end: 21.44px;
+            margin-block-start: 21.44px;
+            margin-inline-end: 0px;
+            margin-inline-start: 0px;
+            unicode-bidi: isolate;
+            text-decoration: none;
+        }
+        .review {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .review-header h2 {
+            font-size: 1.8em;
+            margin: 0;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .review-detail p {
+            font-size: 1em;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .review-detail p strong {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .review-content {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .actions a .button-edit,
+        .actions form .button-edit {
+            background-color: #a3a3a3;;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 5px;
+        }
+
+
+        .actions form {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>       
+            <a href = "{% url 'review:review_list' %}">
+                <h1>My<span style="color: #e50914;">Movie</span>reviews 🍿</h1>
+            </a>
+        <div class="btn-container">
+            <a href="{% url 'review:review_create' %}" class="btn">Add a New Review</a>
+        </div>
+    </header>
+    
+    <div class="review">
+        <div class="review-header">
+            <h2 class="title">{{ review.title }}</h2>
+        </div>
+        <div class="review-detail">
+            <p><strong>개봉년도: </strong>{{review.release_year}}</p>
+            <p><strong>감독: </strong>{{review.director}}</p>
+            <p><strong>주연: </strong>{{review.cast}}</p>
+            <p><strong>장르: </strong>{{review.genre}}</p>
+            <p><strong>별점: </strong>{{review.rating}}</p>
+            <p><strong>러닝타임: </strong>{{review.running_time}}</p>
+        </div>
+
+        <div class="review-content">
+            <p>{{review.review_content}}</p>
+        </div>
+
+        <div class="actions">
+
+            <a href="{% url 'review:review_update' review.pk %}">
+                <button class="button-edit">수정</button>
+            </a>
+            
+            <form action="{% url 'review:review_delete' review.pk %}" method="POST" style="display:inline;">
+                {% csrf_token %}
+                <button class="button-edit">삭제</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

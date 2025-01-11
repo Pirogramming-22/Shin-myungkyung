@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글쓰기</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+            }
+
+        header {
+            text-align: center;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .main-small {
+            font-size: 24px;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: black;
+        }
+        .main {
+            display: block;
+            font-size: 2em;
+            margin-block-start: 0.67em;
+            margin-block-end: 0.67em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+            unicode-bidi: isolate;
+            text-decoration: none;
+        }
+        a {
+        text-decoration: none; /* 모든 링크의 밑줄 제거 */
+        }
+
+        .btn-container {
+            text-align: right;
+            padding: 10px 20px;
+        }
+
+        .btn-container a {
+            text-decoration: none;
+            background-color: #e50914;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .form-container {
+            width: 40%;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* padding 포함 크기 계산 */
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #d40812;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href = "{% url 'review:review_list' %}">
+            <h1 class="main">My<span style="color: #e50914;">Movie</span>reviews 🍿</h1>
+        </a>
+        <div class="btn-container">
+            <a href="{% url 'review:review_create' %}">Add a New Review</a>
+        </div>
+    </header>
+    <div class="form-container">
+        <h1 class="main-small"><span style="color: #e50914;">Movie</span> review</h1>
+        <form  action = "{% url 'review:review_update' review.pk %}" method = 'post'>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for = 'title'>제목: </label>
+                <input type='text' id="title" value={{review.title}} name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="release_year">개봉년도:</label>
+                <input type="number" id="release_year" value={{review.release_year}} name="release_year" required>
+            </div>
+            <div class="form-group">
+                <label for="genre">장르:</label>
+                <input type='text' id="genre" value={{review.genre}} name="genre" required>
+            </div>
+            <div class="form-group">
+                <label for="rating">별점:</label>
+                <input type="number" id="rating" value={{review.rating}} name="rating" step="0.1" min="0" max="5" required>
+            </div>
+            <div class="form-group">
+                <label for="running_time">러닝타임:</label>
+                <input type="number" id="running_time" value={{review.running_time}} name="running_time" required>
+            </div>
+            <div class="form-group">
+                <label for="review_content">리뷰:</label>
+                <textarea id="review_content" name="review_content" rows="5" style="width: 100%;" required>{{ review.review_content }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="director">감독:</label>
+                <input type="text" id="director" value={{review.director}} name="director" required>
+            </div>
+            <div class="form-group">
+                <label for="cast">배우:</label>
+                <input type="text" id="cast" value={{review.cast}} name="cast" required>
+            </div>
+
+            <a href="{% url 'review:review_detail' review.pk %}">
+                <button class="button-edit">Save</button>
+            </a>
+        </form>
+    </div>
+</body>
+</html>

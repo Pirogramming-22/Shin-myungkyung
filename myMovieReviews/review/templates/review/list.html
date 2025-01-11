@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myMoviereviews</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+    }
+    h1 {
+        color: black;
+    }
+    .btn-container a {
+        text-decoration: none;
+        background-color: #e50914;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    .list-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+    }
+    
+    .card {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 250px;
+        text-align: center;
+    }
+    .card-image img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+    .card-content {
+        padding: 15px;
+    }
+    .card-title {
+        font-size: 18px;
+        margin: 10px 0;
+        color: #333;
+    }
+    .card-detail {
+        font-size: 14px;
+        color: #666;
+        margin: 5px 0;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+</style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My<span style="color: #e50914;">Movie</span>reviews 🍿</h1>
+        <div class="btn-container">
+            <a href="{% url 'review:review_create' %}" class="btn">Add a New Review</a>
+        </div>
+    </header>
+    
+    <div class="list-container">
+    {% for review in reviews %}
+        <a href="{% url 'review:review_detail' review.pk %}" class="card">
+
+                    <div class="card-content">
+                        <h2 class="card-title">{{ review.title }}</h2>
+                        <p class="card-detail">개봉년도: {{ review.release_year }}</p>
+                        <p class="card-detail">장르: {{ review.genre }}</p>
+                        <p class="card-detail">별점: {{ review.rating }}</p>
+                    </div>
+
+        </a>
+    {% empty %}
+        <p>등록된 리뷰가 없어요!</p>
+    {% endfor %}
+    </div>
+</body>
+</html>

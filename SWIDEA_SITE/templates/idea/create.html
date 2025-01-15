@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block head %}
+        <link rel="stylesheet" href="{% static 'idea/create.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div class="create_container">
+        <h3 class="form_title yellow">Idea Register</h3>
+        <p class="discription">아이디어 등록 페이지 입니다. 당신의 아이디어를 잊지 말고 기록하세요!</p>
+        <form action="" method="post", enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit_button">SUBMIT</button>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

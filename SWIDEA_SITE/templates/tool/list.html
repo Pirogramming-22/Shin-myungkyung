@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block head %}
+        <link rel="stylesheet" href="{% static 'tool/list.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div class="list_container">
+        <h3 class="form_title yellow">DevTool List</h3>
+        <p class="discription">개발툴 목록페이지 입니다.</p>
+        <div class="item_container">
+            {% for tool in page_obj %}
+            <div class="item">
+                <a href="{% url 'tool:detail' tool.pk %}" class="tool_name">{{ tool.name }}</a>
+                <p class="tool_kind">{{ tool.kind }}</p>
+                <p class="tool_content">{{ tool.content }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">Prev</a>
+                {% endif %}
+        
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                </span>
+        
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="next">Next</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

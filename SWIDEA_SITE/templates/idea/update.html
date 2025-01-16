@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block head %}
+        <link rel="stylesheet" href="{% static 'idea/update.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div class="update_container">
+        <h3 class="form_title yellow">Idea Detail Update</h3>
+        <p class="discription">아이디어 세부내용 수정 페이지 입니다. 아이디어를 구체화하거나 내용을 변경해 보아요.</p>
+        <form action="" method="post", enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit_button">SUBMIT</button>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

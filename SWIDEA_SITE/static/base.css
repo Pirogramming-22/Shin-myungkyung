@@ -1,0 +1,67 @@
+
+header {
+    background-color: rgba(0, 0, 0, 0.8); /* 헤더 배경색 추가 */
+    color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 좌우 정렬 */
+    padding: 15px 30px; /* 패딩 추가 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+}
+
+.header_title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase; /* 대문자 변환 */
+    transition: color 0.3s ease;
+}
+
+
+a {
+    text-decoration: none;
+    color: #f4f4f4;
+    margin: 0 15px; /* 링크 간격 추가 */
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+body {
+    background-color: #bebebe; 
+}
+
+.container {
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px; /* 둥근 모서리 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+.yellow {
+    color: #00cc8f; /* 노란색 강조 */
+    font-weight: bold;
+}
+
+h3.yellow {
+    color: black
+}
+
+.bright {
+    color: #ffeb3b; /* 밝은 노란색 */
+    font-weight: bold;
+}
+
+.like-btn {
+    background-color: #ff5722; /* 버튼 색상 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* 둥근 모서리 */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.like-btn:hover {
+    background-color: #e64a19; /* 호버 시 버튼 색상 */
+}
